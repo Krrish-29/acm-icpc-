@@ -1,0 +1,25 @@
+int diagonalDifference(int arr_rows, int arr_columns, int** arr) {
+    int leftsum=0,rightsum=0,difference,z=0 ;
+    for(int i=0;i<arr_rows;i++){
+        for(int j=z;j<arr_columns;j++){
+            leftsum+=*(*(arr + i) + j);
+            j+=3*arr_rows;
+        }
+        z++;
+    }
+    z=arr_columns-1;
+    for(int x=0;x<arr_rows;x++){
+        for(int y=z;y>=0;y--){
+            rightsum+=*(*(arr + x) + y);
+            y-=3*arr_columns;
+        }
+        z--;
+    }
+    if(leftsum>rightsum){
+        difference= leftsum-rightsum;
+    }
+    else{
+        difference= rightsum-leftsum;
+    }
+    return difference;
+}
