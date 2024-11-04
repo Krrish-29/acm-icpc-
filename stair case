@@ -1,0 +1,15 @@
+void staircase(int n) {
+    int i=n,j,z;
+    for(i=n;i>0;i--){
+        j=i-1;
+        z=n-j;
+        for(j;j>0;j--){
+            printf(" ");
+        }
+        while(z>0){
+            printf("#");
+            z--;
+        }
+        printf("\n");
+    }
+}
