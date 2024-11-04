@@ -1,0 +1,36 @@
+char* timeConversion(char* s) {
+    char * time=(char*)calloc(9,sizeof(char));
+    if(s[8]=='P'){
+        int i=0;
+        if(s[0]=='1'&&s[1]=='2'){
+            time[i]='1';
+            i++;
+            time[i]='2';
+            i++;      
+        }
+        else{
+            time[i]=(char)(s[0]+1);
+            i++;
+            time[i]=(char)(s[1]+2);
+            i++;
+        }
+        for(i;i<8;i++){
+            time[i]=s[i];
+        }
+        time[8]='\0';    
+    }
+    else if(s[8]=='A'){
+        int i=0;
+        if(s[0]=='1'&&s[1]=='2'){
+            time[i]='0';
+            i++;
+            time[i]='0';
+            i++;
+        }
+        for(i;i<8;i++){
+            time[i]=s[i];
+        }
+        time[8]='\0';
+    }
+    return time;
+}
