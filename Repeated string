@@ -1,0 +1,17 @@
+long repeatedString(char* s, long n) {
+    long int counter=0,no_of_a=0,str_len=strlen(s),x=(n/str_len)*(str_len);
+    if(str_len<n){
+        for(int i=0;i<str_len;i++){
+            if(s[i]=='a'){
+                (no_of_a)++;
+            }
+        }
+        counter+=(no_of_a)*(n/str_len);
+    }
+    for(int k=0;k<(n-x);k++){
+        if(s[k]=='a'){
+            counter+=1;
+        }
+    }
+    return counter;
+}
